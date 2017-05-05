@@ -74,8 +74,7 @@ messi.save(function (err) {if (err) console.log ('Error on save!')});
 var router = express.Router();
 
 
-router.route('/players')
-	.post(function(req, res) {
+router.route('/players').post(function(req, res) {
 		
 		var player = new Player();		// create a new instance of the Bear model
 		player.name = req.body.name;  // set the bears name (comes from the request)
@@ -97,11 +96,11 @@ router.route('/players')
 	})
 	// get all the players
 	.get(function(req, res) {
-		Bear.find(function(err, bears) {
+		Player.find(function(err, bears) {
 			if (err)
 				res.send(err);
 
-			res.json(bears);
+			res.json(players);
 		});
 	});
 
