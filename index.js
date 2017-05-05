@@ -39,18 +39,18 @@ var PlayerSchema = new mongoose.Schema({
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
-var player = mongoose.model('Player', PlayerSchema);
+var Player = mongoose.model('Player', PlayerSchema);
 
 
 // Clear out old data
-player.remove({}, function(err) {
+Player.remove({}, function(err) {
   if (err) {
     console.log ('error deleting old data.');
   }
 });
 
 // Creating one user.
-var messi = new player ({
+var messi = new Player ({
   name: 'L.Messi',
   age: 25,
   nationality: 'Argentina',
@@ -63,12 +63,12 @@ var messi = new player ({
 messi.save(function (err) {if (err) console.log ('Error on save!')});
 
 
-// middleware to use for all requests
-app.use(function(req, res, next) {
-    // do logging
-    console.log('Something is happening.');
-    next(); // make sure we go to the next routes and don't stop here
-});
+// // middleware to use for all requests
+// app.use(function(req, res, next) {
+//     // do logging
+//     console.log('Something is happening.');
+//     next(); // make sure we go to the next routes and don't stop here
+// });
 
 
 
@@ -157,15 +157,15 @@ app.use('/api', app);
 
 
 
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+// // views is directory for all template files
+// app.set('views', __dirname + '/views');
+// app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
+// app.get('/', function(request, response) {
+//   response.render('pages/index');
+// });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
