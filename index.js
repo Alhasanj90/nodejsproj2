@@ -135,7 +135,7 @@ router.route('/players/:id')
 			if (err)
 				res.send(err);
 
-			player.name = req.params.name;
+			player.name = req.body.name;
 			player.save(function(err) {
 				if (err)
 					res.send(err);
