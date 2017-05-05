@@ -40,27 +40,28 @@ var PlayerSchema = new mongoose.Schema({
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 var Player = mongoose.model('Player', PlayerSchema);
+module.exports = mongoose.model('Player', PlayerSchema);
 
 
-// Clear out old data
-Player.remove({}, function(err) {
-  if (err) {
-    console.log ('error deleting old data.');
-  }
-});
+// // Clear out old data
+// Player.remove({}, function(err) {
+//   if (err) {
+//     console.log ('error deleting old data.');
+//   }
+// });
 
-// Creating one user.
-	var messi = new Player ({
-	  name: 'L.Messi',
-	  age: 25,
-	  nationality: 'Argentina',
-	  team: {current : "Barcelona",
-			previous: ''
-			},
-			rank : 9.6
-	});
+// // Creating one user.
+// 	var messi = new Player ({
+// 	  name: 'L.Messi',
+// 	  age: 25,
+// 	  nationality: 'Argentina',
+// 	  team: {current : "Barcelona",
+// 			previous: ''
+// 			},
+// 			rank : 9.6
+// 	});
  
-messi.save(function (err) {if (err) console.log ('Error on save!')});
+// messi.save(function (err) {if (err) console.log ('Error on save!')});
 
 
 // // middleware to use for all requests
@@ -74,9 +75,10 @@ messi.save(function (err) {if (err) console.log ('Error on save!')});
 var router = express.Router();
 
 
-router.route('/players').
+router.route('/players')
+		
 
-		post(function(req, res) {
+		.post(function(req, res) {
 		var player 	= new Player();		// create a new instance of the Bear model
 		player.name = req.body.name;  // set the bears name (comes from the request)
 		player.age 			= req.body.age;  // set the bears name (comes from the request)
@@ -107,7 +109,7 @@ router.route('/players').
 
 
 router.route('/removeAll').
-		post(function(req, res) {
+		delete(function(req, res) {
 		
 		Player.remove({}, function(err) {
 		  if (err) {
