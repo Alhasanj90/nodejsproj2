@@ -67,12 +67,6 @@ module.exports = mongoose.model('Player', PlayerSchema);
 // messi.save(function (err) {if (err) console.log ('Error on save!')});
 
 
-// // middleware to use for all requests
-// app.use(function(req, res, next) {
-//     // do logging
-//     console.log('Something is happening.');
-//     next(); // make sure we go to the next routes and don't stop here
-// });
 
 
 var router = express.Router();
@@ -123,7 +117,46 @@ router.route('/removeAll').
 	});
 
 
+router.route('/players/:player_id')
 
+	// get the bear with that id
+	.get(function(req, res) {
+		Player.findById(req.body.player_id, function(err, player) {
+			if (err)
+				res.send(err);
+			res.json(player);
+		});
+	})
+
+	// update the bear with this id
+	.put(function(req, res) {
+		Player.findById(req.body.player_id, function(err, player) {
+
+			if (err)
+				res.send(err);
+
+			player.name = req.body.name;
+			player.save(function(err) {
+				if (err)
+					res.send(err);
+
+				res.json({ message: 'player updated!' });
+			});
+
+		});
+	})
+
+	// delete the bear with this id
+	.delete(function(req, res) {
+		Player.remove({
+			_id: req.body.player_id
+		}, function(err, bear) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
 
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
