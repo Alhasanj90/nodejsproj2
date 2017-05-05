@@ -50,15 +50,15 @@ Player.remove({}, function(err) {
 });
 
 // Creating one user.
-var messi = new Player ({
-  name: 'L.Messi',
-  age: 25,
-  nationality: 'Argentina',
-  team: {current : "Barcelona",
-		previous: ''
-		},
-		rank : 9.6
-});
+	var messi = new Player ({
+	  name: 'L.Messi',
+	  age: 25,
+	  nationality: 'Argentina',
+	  team: {current : "Barcelona",
+			previous: ''
+			},
+			rank : 9.6
+	});
  
 messi.save(function (err) {if (err) console.log ('Error on save!')});
 
@@ -74,8 +74,9 @@ messi.save(function (err) {if (err) console.log ('Error on save!')});
 var router = express.Router();
 
 
-router.route('/players').post(function(req, res) {
-		
+router.route('/players').
+
+		post(function(req, res) {
 		var player 	= new Player();		// create a new instance of the Bear model
 		player.name = req.body.name;  // set the bears name (comes from the request)
 		player.age 			= req.body.age;  // set the bears name (comes from the request)
@@ -105,6 +106,16 @@ router.route('/players').post(function(req, res) {
 	});
 
 
+router.route('/removeAll').
+		post(function(req, res) {
+		
+		User.remove({}, function(err) {
+		  if (err) {
+		    console.log ('error deleting old data.');
+		  }
+		});
+
+	});
 
 
 
