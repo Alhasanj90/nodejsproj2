@@ -71,8 +71,10 @@ messi.save(function (err) {if (err) console.log ('Error on save!')});
 // });
 
 
+var router = express.Router();
 
-app.route('/players')
+
+router.route('/players')
 	.get(function(req, res) {
 		Player.find(function(err, players) {
 			if (err)
@@ -82,58 +84,17 @@ app.route('/players')
 		});
 	});
 
-// // on routes that end in /bears/:bear_id
-// // ----------------------------------------------------
-// router.route('/players/:player_id')
 
-// 	// get the bear with that id
-// 	.get(function(req, res) {
-// 		Player.findById(req.params.player_id, function(err, bear) {
-// 			if (err)
-// 				res.send(err);
-// 			res.json(player);
-// 		});
-// 	})
-
-// 	// update the bear with this id
-// 	.put(function(req, res) {
-// 		Player.findById(req.params.bear_id, function(err, bear) {
-
-// 			if (err)
-// 				res.send(err);
-
-// 			player.name = req.body.name;
-// 			bear.save(function(err) {
-// 				if (err)
-// 					res.send(err);
-
-// 				res.json({ message: 'Bear updated!' });
-// 			});
-
-// 		});
-// 	})
-
-// 	// delete the bear with this id
-// 	.delete(function(req, res) {
-// 		Bear.remove({
-// 			_id: req.params.bear_id
-// 		}, function(err, bear) {
-// 			if (err)
-// 				res.send(err);
-
-// 			res.json({ message: 'Successfully deleted' });
-// 		});
-// 	});
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });	
 });
 
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', app);
+app.use('/api', router);
 
 
 
