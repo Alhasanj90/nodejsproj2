@@ -75,16 +75,14 @@ module.exports = mongoose.model('Player', PlayerSchema);
 var router = express.Router();
 
 
-router.route('/players')
-		
-
-		.post(function(req, res) {
+router.route('/players').post(function(req, res) {
 		var player_data 	= {		
-		name : req.params.name,  
-		age 	: req.params.age,  
-		nationality  : req.params.nationality,
-		rank : req.params.rank,
-		team : req.params.team
+		name : req.params.name
+		// ,  
+		// age 	: req.params.age,  
+		// nationality  : req.params.nationality,
+		// rank : req.params.rank,
+		// team : req.params.team
 		};
 
 
@@ -96,18 +94,18 @@ router.route('/players')
 
 			res.json({ message: 'Player created!' });
 		});
-
-		
-	})
-	// get all the players
-	.get(function(req, res) {
-		Player.find(function(err, players) {
-			if (err)
-				res.send(err);
-
-			res.json(players);
+	
 		});
-	});
+		// get all the players
+		
+router.route('/players').get(function(req, res) {
+			Player.find(function(err, players) {
+				if (err)
+					res.send(err);
+
+				res.json(players);
+			});
+		});
 
 
 router.route('/removeAll').
@@ -139,7 +137,7 @@ app.use('/api', router);
 
 
 
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
