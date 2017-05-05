@@ -136,6 +136,10 @@ router.route('/players/:id')
 				res.send(err);
 
 			player.name = req.body.name;
+			player.age = req.body.age;
+			player.rank = req.body.rank;
+			player.nationality = req.body.nationality;
+			player.team = req.body.team;
 			player.save(function(err) {
 				if (err)
 					res.send(err);
