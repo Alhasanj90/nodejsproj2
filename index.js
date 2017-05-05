@@ -78,10 +78,10 @@ var router = express.Router();
 router.route('/players').post(function(req, res) {
 		var player_data 	= {		
 		name : req.params.name
-		// ,  
-		// age 	: req.params.age,  
-		// nationality  : req.params.nationality,
-		// rank : req.params.rank,
+		,  
+		age 	: req.params.age,
+		nationality  : req.params.nationality,
+		rank : req.params.rank
 		// team : req.params.team
 		};
 
