@@ -73,24 +73,6 @@ messi.save(function (err) {if (err) console.log ('Error on save!')});
 
 
 app.route('/players')
-
-    // create a bear (accessed at POST http://localhost:8080/api/bears)
-    // .post(function(req, res) {
-        
-    //     var player = new Player();      // create a new instance of the Bear model
-    //     player.name = req.body.name;  // set the bears name (comes from the request)
-
-    //     // save the bear and check for errors
-    //     player.save(function(err) {
-    //         if (err)
-    //             res.send(err);
-
-    //         res.json({ message: 'Bear created!' });
-    //     });
-        
-    // });
-
-	// get all the bears (accessed at GET http://localhost:8080/api/bears)
 	.get(function(req, res) {
 		Player.find(function(err, players) {
 			if (err)
