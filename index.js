@@ -1,5 +1,7 @@
 var express = require('express');
 var mongoose = require ("mongoose");
+var bodyParser = require('body-parser');
+
 
 var uristring = 
   process.env.MONGODB_URI || 
@@ -8,6 +10,7 @@ var uristring =
 
 
 var app = express();
+app.use(bodyParser.json());
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -128,6 +131,7 @@ router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });	
 });
 
+router.post('/', function(req, res){});
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
