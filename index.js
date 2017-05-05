@@ -86,7 +86,7 @@ router.route('/players').post(function(req, res) {
 		};
 
 
-		var player = new Player(person_data);
+		var player = new Player(player_data);
 
 		player.save(function(err) {
 			if (err)
