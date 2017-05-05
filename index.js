@@ -117,11 +117,11 @@ router.route('/removeAll').
 	});
 
 
-router.route('/players/:player_id')
+router.route('/players/:_id')
 
 	// get the bear with that id
 	.get(function(req, res) {
-		Player.findById(req.body.player_id, function(err, player) {
+		Player.findById(req.body._id, function(err, player) {
 			if (err)
 				res.send(err);
 			res.json(player);
@@ -130,7 +130,7 @@ router.route('/players/:player_id')
 
 	// update the bear with this id
 	.put(function(req, res) {
-		Player.findById(req.body.player_id, function(err, player) {
+		Player.findById(req.body._id, function(err, player) {
 
 			if (err)
 				res.send(err);
@@ -149,7 +149,7 @@ router.route('/players/:player_id')
 	// delete the bear with this id
 	.delete(function(req, res) {
 		Player.remove({
-			_id: req.body.player_id
+			_id: req.body._id
 		}, function(err, bear) {
 			if (err)
 				res.send(err);
