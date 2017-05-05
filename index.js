@@ -75,14 +75,39 @@ var router = express.Router();
 
 
 router.route('/players')
-	.get(function(req, res) {
-		Player.find(function(err, players) {
+	.post(function(req, res) {
+		
+		var player = new Player();		// create a new instance of the Bear model
+		player.name = req.body.name;  // set the bears name (comes from the request)
+		player.age = req.body.age;  // set the bears name (comes from the request)
+		player.nationality = req.body.nationality;  // set the bears name (comes from the request)
+		player.rank = req.body.rank;  // set the bears name (comes from the request)
+		player.team = req.body.team;  // set the bears name (comes from the request)
+
+
+
+		player.save(function(err) {
 			if (err)
 				res.send(err);
 
-			res.json(players);
+			res.json({ message: 'Player created!' });
+		});
+
+		
+	})
+	// get all the players
+	.get(function(req, res) {
+		Bear.find(function(err, bears) {
+			if (err)
+				res.send(err);
+
+			res.json(bears);
 		});
 	});
+
+
+
+
 
 
 
