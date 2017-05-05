@@ -84,8 +84,8 @@ router.route('/players').post(function(req, res) {
 		,  
 		age 	: req.body.age,
 		nationality  : req.body.nationality,
-		rank : req.body.rank
-		// team : req.params.team
+		rank : req.body.rank,
+		team : req.body.team
 		};
 
 
