@@ -79,14 +79,16 @@ router.route('/players')
 		
 
 		.post(function(req, res) {
-		var player 	= new Player();		// create a new instance of the Bear model
-		player.name = req.body.name;  // set the bears name (comes from the request)
-		player.age 			= req.body.age;  // set the bears name (comes from the request)
-		player.nationality  = req.body.nationality;  // set the bears name (comes from the request)
-		player.rank = req.body.rank;  // set the bears name (comes from the request)
-		player.team = req.body.team;  // set the bears name (comes from the request)
+		var player_data 	= {		
+		name : req.params.name,  
+		age 	: req.params.age,  
+		nationality  : req.params.nationality,
+		rank : req.params.rank,
+		team : req.params.team
+		};
 
 
+		var player = new Player(person_data);
 
 		player.save(function(err) {
 			if (err)
