@@ -109,7 +109,7 @@ router.route('/players').
 router.route('/removeAll').
 		post(function(req, res) {
 		
-		User.remove({}, function(err) {
+		Player.remove({}, function(err) {
 		  if (err) {
 		    console.log ('error deleting old data.');
 		  }
