@@ -7,26 +7,7 @@ var pubnub = require("pubnub")({
     subscribe_key : "sub-c-ccf3ff7a-31c3-11e7-bc1c-0619f8945a4f"
 });
 
-/* ---------------------------------------------------------------------------
-Publish Messages
---------------------------------------------------------------------------- */
-var message = { "Hello" : "World!" };
-pubnub.publish({
-    channel   : 'hello_world',
-    message   : message,
-    callback  : function(e) { console.log( "SUCCESS!", e ); },
-    error     : function(e) { console.log( "FAILED! RETRY PUBLISH!", e ); }
-});
 
-/* ---------------------------------------------------------------------------
-Listen for Messages
---------------------------------------------------------------------------- */
-pubnub.subscribe({
-    channel  : "hello_world",
-    callback : function(message) {
-        console.log( " > ", message );
-    }
-});
 
 var uristring = 
   process.env.MONGODB_URI || 
@@ -163,7 +144,26 @@ router.post('/', function(req, res){});
 app.use('/api', router);
 
 
+/* ---------------------------------------------------------------------------
+Publish Messages
+--------------------------------------------------------------------------- */
+var message = { "Hello" : "World!" };
+pubnub.publish({
+    channel   : 'hello_world',
+    message   : message,
+    callback  : function(e) { console.log( "SUCCESS!", e ); },
+    error     : function(e) { console.log( "FAILED! RETRY PUBLISH!", e ); }
+});
 
+/* ---------------------------------------------------------------------------
+Listen for Messages
+--------------------------------------------------------------------------- */
+pubnub.subscribe({
+    channel  : "hello_world",
+    callback : function(message) {
+        console.log( " > ", message );
+    }
+});
 
 
 app.use(express.static(__dirname + '/public'));
