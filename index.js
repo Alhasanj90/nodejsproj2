@@ -26,24 +26,12 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
-//
-// This is the schema.  Note the types, validation and trim
-// statements.  They enforce useful constraints on the data.
-var PlayerSchema = new mongoose.Schema({
-    name: String,
-    nationality: String,
-    rank: Number,
-    team      : {
-        previous : String,
-        current  : String
-    },
-  age: { type: Number, min: 18}
-});
+
 
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
-var Player = mongoose.model('Player', PlayerSchema);
-module.exports = mongoose.model('Player', PlayerSchema);
+
+var Bear     = require('./models/player');
 
 
 // // Clear out old data
