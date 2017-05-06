@@ -2,12 +2,6 @@
 var mongoose     = require('mongoose');
 
 
-var BearSchema   = new Schema({
-	name: String
-});
-
-
-//
 // This is the schema.  Note the types, validation and trim
 // statements.  They enforce useful constraints on the data.
 var PlayerSchema = new mongoose.Schema({

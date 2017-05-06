@@ -31,30 +31,7 @@ mongoose.connect(uristring, function (err, res) {
 // Compiles the schema into a model, opening (or creating, if
 // nonexistent) the 'PowerUsers' collection in the MongoDB database
 
-var Bear     = require('./models/player');
-
-
-// // Clear out old data
-// Player.remove({}, function(err) {
-//   if (err) {
-//     console.log ('error deleting old data.');
-//   }
-// });
-
-// // Creating one user.
-// 	var messi = new Player ({
-// 	  name: 'L.Messi',
-// 	  age: 25,
-// 	  nationality: 'Argentina',
-// 	  team: {current : "Barcelona",
-// 			previous: ''
-// 			},
-// 			rank : 9.6
-// 	});
- 
-// messi.save(function (err) {if (err) console.log ('Error on save!')});
-
-
+var Player     = require('./models/player');
 
 
 var router = express.Router();
