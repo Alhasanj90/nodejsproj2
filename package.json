@@ -18,12 +18,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Alhasanj90/nodejsproj2.git"
-  }
-//   },
-//   "keywords": [
-//     "node",
-//     "heroku",
-//     "express"
-//   ],
-//   "license": "MIT"
-// }
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
