@@ -1,11 +1,7 @@
 var express = require('express');
 var mongoose = require ("mongoose");
 var bodyParser = require('body-parser');
-// var pubnub = require("pubnub")({
-//     ssl           : no,  // <- enable TLS Tunneling over TCP
-//     publish_key   : "pub-c-50ebec5b-ad39-4ee5-b9f0-f3a352018c4f",
-//     subscribe_key : "sub-c-ccf3ff7a-31c3-11e7-bc1c-0619f8945a4f"
-// });
+
 
 
 
