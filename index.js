@@ -144,26 +144,7 @@ router.post('/', function(req, res){});
 app.use('/api', router);
 
 
-/* ---------------------------------------------------------------------------
-Publish Messages
---------------------------------------------------------------------------- */
-var message = { "Hello" : "World!" };
-pubnub.publish({
-    channel   : 'hello_world',
-    message   : message,
-    callback  : function(e) { console.log( "SUCCESS!", e ); },
-    error     : function(e) { console.log( "FAILED! RETRY PUBLISH!", e ); }
-});
 
-/* ---------------------------------------------------------------------------
-Listen for Messages
---------------------------------------------------------------------------- */
-pubnub.subscribe({
-    channel  : "hello_world",
-    callback : function(message) {
-        console.log( " > ", message );
-    }
-});
 
 
 app.use(express.static(__dirname + '/public'));
