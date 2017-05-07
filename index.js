@@ -1,11 +1,11 @@
 var express = require('express');
 var mongoose = require ("mongoose");
 var bodyParser = require('body-parser');
-var pubnub = require("pubnub")({
-    ssl           : no,  // <- enable TLS Tunneling over TCP
-    publish_key   : "pub-c-50ebec5b-ad39-4ee5-b9f0-f3a352018c4f",
-    subscribe_key : "sub-c-ccf3ff7a-31c3-11e7-bc1c-0619f8945a4f"
-});
+// var pubnub = require("pubnub")({
+//     ssl           : no,  // <- enable TLS Tunneling over TCP
+//     publish_key   : "pub-c-50ebec5b-ad39-4ee5-b9f0-f3a352018c4f",
+//     subscribe_key : "sub-c-ccf3ff7a-31c3-11e7-bc1c-0619f8945a4f"
+// });
 
 
 
@@ -88,7 +88,7 @@ router.route('/removeAll').
 
 router.route('/players/:id')
 
-	// get the bear with that id
+	// get the player with that id
 	.get(function(req, res) {
 		Player.findById(req.params.id, function(err, player) {
 			if (err)
@@ -97,7 +97,7 @@ router.route('/players/:id')
 		});
 	})
 
-	// update the bear with this id
+	// update the player with this id
 	.put(function(req, res) {
 		Player.findById(req.params.id, function(err, player) {
 
@@ -119,11 +119,11 @@ router.route('/players/:id')
 		});
 	})
 
-	// delete the bear with this id
+	// delete the player with this id
 	.delete(function(req, res) {
 		Player.remove({
 			_id: req.params.id
-		}, function(err, bear) {
+		}, function(err, player) {
 			if (err)
 				res.send(err);
 
