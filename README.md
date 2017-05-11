@@ -35,3 +35,4 @@ As we can see above the API use Validation for the age so we got an error when t
 The above Screenshot shows that we added a player when changing the age of the player.
 
 ### Player added in Heroku
+![screen shot 2017-05-11 at 15 28 56](https://cloud.githubusercontent.com/assets/17804084/25954612/c7390ebe-365e-11e7-9aec-3b4d7b955369.png)
