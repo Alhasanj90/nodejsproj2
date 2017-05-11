@@ -51,3 +51,6 @@ We can see above that we update the player name as we addedfamily name and it is
 ## Delete a player
 to delete the same player that we just added and updated,we have to use the player id with heroku link as folowing:
 
+![screen shot 2017-05-11 at 15 42 22](https://cloud.githubusercontent.com/assets/17804084/25955246/9db485ee-3660-11e7-8d3a-55526ecd1d98.png)
+
+
