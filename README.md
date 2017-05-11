@@ -21,6 +21,8 @@ to push the files to heroku and each time made change to the API i used the foll
 
 this how is the players list look in Heroku as we listed all the players in the database.
 
-##Add a player
+## Add a player
+
 Using Advanced REST client
 we have to use application/json to add player to the list. 
+
