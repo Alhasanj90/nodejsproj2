@@ -36,3 +36,9 @@ The above Screenshot shows that we added a player when changing the age of the p
 
 ### Player added in Heroku
 ![screen shot 2017-05-11 at 15 28 56](https://cloud.githubusercontent.com/assets/17804084/25954612/c7390ebe-365e-11e7-9aec-3b4d7b955369.png)
+
+
+## Update Player
+to update the same player that we just added to the list we should use the heroku link and the player ID 
+as following :
+
