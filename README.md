@@ -28,4 +28,5 @@ we have to use application/json to add player to the list.
 
 ![screen shot 2017-05-11 at 15 20 02](https://cloud.githubusercontent.com/assets/17804084/25954251/925ce144-365d-11e7-8ce2-0d53797cdeda.png)
 
-As tha API use Validation for the age so we got an error when trying to add a player with age less than 18 .
+As we can see above the API use Validation for the age so we got an error when trying to add a player with age less than 18.
+
