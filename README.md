@@ -44,3 +44,10 @@ as following :
 
 ![screen shot 2017-05-11 at 15 34 30](https://cloud.githubusercontent.com/assets/17804084/25954900/9094ebd4-365f-11e7-9ed7-1a9d5ddc5ea3.png)
 
+![screen shot 2017-05-11 at 15 35 24](https://cloud.githubusercontent.com/assets/17804084/25954944/b1213c0e-365f-11e7-8798-ff59db70417d.png)
+
+We can see above that we update the player name as we addedfamily name and it is been updated in the list.
+
+## Delete a player
+to delete the same player that we just added and updated,we have to use the player id with heroku link as folowing:
+
