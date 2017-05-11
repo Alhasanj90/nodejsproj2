@@ -30,3 +30,8 @@ we have to use application/json to add player to the list.
 
 As we can see above the API use Validation for the age so we got an error when trying to add a player with age less than 18.
 
+![screen shot 2017-05-11 at 15 25 26](https://cloud.githubusercontent.com/assets/17804084/25954413/23314bf6-365e-11e7-80a1-0f808eef60f3.png)
+
+The above Screenshot shows that we added a player when changing the age of the player.
+
+### Player added in Heroku
