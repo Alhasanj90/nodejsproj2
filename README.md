@@ -1,6 +1,5 @@
 # Football Player List API
-A simple REST API project that list players information by using http to list, add,
-update and delete data.
+A simple REST API project that list players information. We can add, update, delete a player from the list.
 
 ## Heroku
 In order to push the API to Heroku I have used the Following code in terminal:
